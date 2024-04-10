@@ -5,7 +5,15 @@ window.fbAsyncInit = function() {
         xfbml      : true, 
         version    : 'v19.0'
     });
-
+    FB.login(
+      function(response) {
+        console.log(response);
+      },
+      {
+        config_id: '985918102869589' // right
+        // configId: '<CONFIG_ID>' // wrong
+      }
+    );
 
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
